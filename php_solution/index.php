@@ -1,13 +1,14 @@
 <?php
 if (isset($_POST['send_email'])) {
-    $url = "https://api.resend.com/emails";
-    $apiKey = "re_MZEi4p2X_PNTY7d3fqJXhCU5vHuqUi38S"; // Replace with your actual API key
+    $url = "https://api.resend.com/emails"; // API address that send the email
+    $apiKey = "re_hM1XAmA8_DAQJyo18fqPE3rD2xL3uyWKW"; // Replace with your actual API key : https://resend.com/onboarding
 
     $data = [
         "from" => "onboarding@resend.dev",
-        "to" => "hammicristo@gmail.com",
+        "to" => "ilia.umons@gmail.com", // address to send to !!! YOU CAN ONLY USE THE EMAIL ADDRESS YOU OPEN THE RESEND ACCOUNT WITH
+        // YOU'LL NEED TO ADD VERIFIED DOMAIN AND HOST YOUR APP SOMEWHERE IF YOU WANT TO SEND TO OTHER EMAIL !
         "subject" => "Hello World",
-        "html" => "<p>Congrats on sending your <strong>first email</strong>!</p>"
+        "html" => "<p>Congrats on sending your <strong>first email</strong>! This is an UMONS tutorial <3 :)</p>" // THIS IS THE CONTENT OF THE MAIL !
     ];
 
     // Initialize cURL
@@ -42,7 +43,7 @@ if (isset($_POST['send_email'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Send Email via Resend</title>
+    <title>Send Email via Resend : AN UMONS TUTORIAL !</title>
 </head>
 <body>
     <?php if (isset($status)) echo "<p>$status</p>"; ?>
